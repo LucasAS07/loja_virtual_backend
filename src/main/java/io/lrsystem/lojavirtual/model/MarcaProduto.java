@@ -2,9 +2,12 @@ package io.lrsystem.lojavirtual.model;
 
 import jakarta.persistence.*;
 
+import java.util.Objects;
+
 @Entity
 @Table(name = "marca_produto")
-@SequenceGenerator(name = "seq_marca_produto", sequenceName = "seq_marca_produto", allocationSize = 1, initialValue = 1)
+@SequenceGenerator(name = "seq_marca_produto", sequenceName = "seq_marca_produto",
+		allocationSize = 1, initialValue = 1)
 public class MarcaProduto {
 
 	@Id
@@ -26,5 +29,17 @@ public class MarcaProduto {
 
 	public void setNomeDesc(String nomeDesc) {
 		this.nomeDesc = nomeDesc;
+	}
+
+	@Override
+	public boolean equals(Object o) {
+		if (o == null || getClass() != o.getClass()) return false;
+		MarcaProduto that = (MarcaProduto) o;
+		return Objects.equals(id, that.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hashCode(id);
 	}
 }
