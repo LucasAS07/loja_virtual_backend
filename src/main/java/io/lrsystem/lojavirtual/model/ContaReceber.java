@@ -3,7 +3,6 @@ package io.lrsystem.lojavirtual.model;
 import io.lrsystem.lojavirtual.enums.StatusContaReceber;
 import jakarta.persistence.*;
 
-import javax.xml.crypto.Data;
 import java.math.BigDecimal;
 import java.util.Date;
 import java.util.Objects;
