@@ -15,25 +15,40 @@ public class Produto {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_produto")
     private Long id;
 
+    @Column(nullable = false)
     private String tipoUnidade;
+
+    @Column(nullable = false)
     private String nome;
 
-    @Column(columnDefinition = "text", length = 2000)
+    @Column(columnDefinition = "text", length = 2000, nullable = false)
     private String descricao;
 
     // TODO: IMPLEMENTAR ITEM NOTA PRODUTO
 
+    @Column(nullable = false)
     private Double peso;
+
+    @Column(nullable = false)
     private Double largura;
+
+    @Column(nullable = false)
     private Double altura;
+
+    @Column(nullable = false)
     private Double profuncdidade;
+
+    @Column(nullable = false)
     private BigDecimal valorVenda;
+
+    @Column(nullable = false)
     private Integer qtdEstoque;
+
     private Integer qtdAlertaEstoque;
     private String linkYoutube;
     private Boolean alertaQtdEstoque;
-    private Integer qtdCliks;
-    private Boolean ativo = Boolean.TRUE;
+    private Integer qtdCliks = 0;
+    private Boolean ativo = Boolean.FALSE;
 
     public Long getId() {
         return id;

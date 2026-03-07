@@ -16,17 +16,21 @@ public class ContaPagar {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_conta_pagar")
     private Long id;
 
+    @Column(nullable = false)
     private String descricao;
 
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private StatusContaPagar status;
 
+    @Column(nullable = false)
     @Temporal(TemporalType.DATE)
     private Date dataVencimeneto;
 
     @Temporal(TemporalType.DATE)
     private Date dataPagamento;
 
+    @Column(nullable = false)
     private BigDecimal valorTotal;
 
     @ManyToOne(targetEntity = Pessoa.class)

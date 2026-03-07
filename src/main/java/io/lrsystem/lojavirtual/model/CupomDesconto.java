@@ -15,10 +15,15 @@ public class CupomDesconto {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq_cupom_desconto")
 	private Long id;
+
+	@Column(nullable = false)
 	private String codDesconto;
+
+
 	private BigDecimal vlRealDesconto;
 	private BigDecimal vlPorcntDesconto;
 
+	@Column(nullable = false)
 	@Temporal(TemporalType.DATE)
 	private Date dataVencimento;
 

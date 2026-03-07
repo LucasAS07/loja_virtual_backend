@@ -24,6 +24,7 @@ public class NotaItemProduto {
             (value = ConstraintMode.CONSTRAINT, name = "produto_fk"))
     private Produto produto;
 
+    @Column(nullable = false)
     private Double quantidade;
 
     public Long getId() {

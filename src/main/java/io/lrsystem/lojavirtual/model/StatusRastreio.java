@@ -14,8 +14,11 @@ public class StatusRastreio {
     private Long id;
 
     private String centroDistribuicao;
+
     private String cidade;
+
     private String estado;
+
     private String status;
 
     @ManyToOne
